@@ -133,6 +133,15 @@ app.put('/update/password',checkUserExists, async(req,res)=>{
         res.status(404).json({message:"Eror",erro:error.message})
     }
 })
+ 
+app.get('/userget',checkUserExists,async (req,res)=>{
+  const {id,username} = req.body;
+
+ res.status(200).json({
+    message:"server can't load"
+ })
+
+})
 
 app.listen(port,()=>{
     console.log("server IS onn")
